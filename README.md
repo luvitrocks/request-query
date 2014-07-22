@@ -14,7 +14,7 @@ If you're not familiar with [npm](https://www.npmjs.org/) check this out:
 
 ## API
 
-### ``query()``
+### ``parsequery()``
 
 Create query middleware function that will take params and turn them to table.
 
@@ -22,11 +22,11 @@ Create query middleware function that will take params and turn them to table.
 
 ```lua
 local utopia = require('luvit-utopia')
-local query = require('luvit-request-query')
+local parsequery = require('luvit-request-query')
 
 local app = utopia:new()
 
-app:use(query())
+app:use(parsequery())
 app:use('/foo?bar=dodo&num=123', function (req, res)
 	-- this will bring table to request
 	-- { bar = 'dodo', num = 123 }
