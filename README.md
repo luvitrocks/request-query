@@ -1,16 +1,12 @@
 # luvit-request-query
 
-Parsing querystring when available middleware to ``req.query`` table for [luvit.io](http://luvit.io) and [Utopia](https://github.com/luvitrocks/luvit-utopia).
+> Parsing querystring when available middleware to ``req.query`` table for [luvit.io](http://luvit.io) and [Utopia](https://github.com/luvitrocks/luvit-utopia).
 
 ## Install
 
 ```bash
-npm install luvit-request-query
+lit install voronianski/request-query
 ```
-
-If you're not familiar with [npm](https://www.npmjs.org/) check this out:
-- https://github.com/voronianski/luvit-npm-example#how-to
-- https://github.com/luvitrocks/luvit-utopia#install
 
 ## API
 
@@ -21,16 +17,16 @@ Create query middleware function that will take params and turn them to table.
 ## Example
 
 ```lua
-local utopia = require('luvit-utopia')
-local parsequery = require('luvit-request-query')
+local Utopia = require('utopia')
+local parsequery = require('request-query')
 
-local app = utopia:new()
+local app = Utopia:new()
 
 app:use(parsequery())
 app:use('/foo?bar=dodo&num=123', function (req, res)
-	-- this will bring table to request
-	-- { bar = 'dodo', num = 123 }
-	p(req.query)
+  -- this will bring table to request
+  -- { bar = 'dodo', num = 123 }
+  p(req.query)
 end)
 
 app:listen(8080)
@@ -40,7 +36,7 @@ app:listen(8080)
 
 MIT Licensed
 
-Copyright (c) 2014 Dmitri Voronianski [dmitri.voronianski@gmail.com](mailto:dmitri.voronianski@gmail.com)
+Copyright (c) 2014-2016 Dmitri Voronianski [dmitri.voronianski@gmail.com](mailto:dmitri.voronianski@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
