@@ -18,14 +18,14 @@ Create query middleware function that will take params and turn them to table.
 
 ```lua
 local Utopia = require('utopia')
-local parsequery = require('request-query')
+local requestQuery = require('request-query')
 
 local app = Utopia:new()
 
-app:use(parsequery())
-app:use('/foo?bar=dodo&num=123', function (req, res)
+app:use(requestQuery)
+app:use('/endpoint?foo=bar', function (req, res)
   -- this will bring table to request
-  -- { bar = 'dodo', num = 123 }
+  -- { foo = 'bar' }
   p(req.query)
 end)
 
