@@ -1,4 +1,4 @@
-# luvit-request-query
+# request-query
 
 > Parsing querystring when available middleware to ``req.query`` table for [luvit.io](http://luvit.io) and [Utopia](https://github.com/luvitrocks/luvit-utopia).
 
